@@ -14,4 +14,13 @@ st.write("### Input Summary")
 st.write(f"**Job:** {job_title} | **Experience:** {experience} years | **Location:** {location} | **Skills:** {skills}")
 
 if st.button("Predict Salary"):
-    st.success("Estimated Salary: ₹900,000 (sample prediction)")
+    # Base salary suggestion
+    base_salary = 500000
+
+    # Add 80k for each year of experience
+    salary = base_salary + (experience * 80000)
+
+    # Format nicely with commas
+    salary_formatted = f"₹{salary:,.0f}"
+
+    st.success(f"Estimated Salary: {salary_formatted}")
